@@ -1,0 +1,42 @@
+MainWidget:
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: .75, 1
+        InputField:
+            id: input_field # Identificador del widget
+            size_hint: 1, .15
+        KeyBoard:
+            size_hint: 1, 1
+    BoxLayout:
+        size_hint: .25, 1
+        orientation: 'vertical'
+        CameraField:
+            size_hint: 1, .4
+        PredictedTextField:
+            size_hint: 1, .6
+
+<KeyBoard>:
+    orientation: 'vertical'
+
+<CameraField>:
+    Image:
+        id: image_widget
+        size_hint: 1, 1
+
+<PredictedTextField>:
+    cols: 2
+    rows: 12
+
+<InputField>:
+    rows: 1
+    size_hint: 1, 1
+    spacing: "2dp"
+    padding: "2dp"
+    TextInput:
+        id: my_text_input
+        size_hint: 0.8, 1
+    Button:
+        id: execute_button
+        text: "Execute"
+        size_hint: 0.2, 1
+        on_release: root.clear_input_text()
